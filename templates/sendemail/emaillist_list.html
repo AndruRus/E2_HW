@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Последние 10 писем:</h1>
+  {% if object_list %}
+    {% for email in object_list %}
+      <p>Письмо для "{{ email.email }}", сообщение "{{ email.message }}", таймер {{ email.delay }} с.</p>
+    {% endfor %}
+  {% endif %}
+{% endblock %}
